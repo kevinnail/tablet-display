@@ -4,6 +4,8 @@ import Overlay from './components/Overlay/Overlay.jsx';
 
 import { loadImagesFromFolder } from './utils/loadImages';
 
+import qrCode from './assets/qrCode.png'
+import slgLogo from './assets/logo-sq-1.png'
 
 export default function App() {
 const imageUrls = useMemo(() => loadImagesFromFolder(), []);
@@ -77,16 +79,35 @@ const imageUrls = useMemo(() => loadImagesFromFolder(), []);
       {panel === 'links' ? (
         <div className="panel" onClick={(event) => event.stopPropagation()}>
           <div className="panel-card">
+          <div style={{display:'flex',justifyContent:'space-between'}}>
             <div className="panel-title">See more work</div>
+
+          </div>
             <div className="panel-body">
-              These can be online when the tablet has internet:
               <div className="panel-links">
-                <a href="https://example.com" target="_blank" rel="noreferrer">
+
+                 <a href="https://stresslessglass.kevinnail.com" target="_blank" rel="noreferrer">
+                 <div style={{display:'flex',flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'20px'}}>
+                  <img
+                    src={slgLogo}
+                    alt=""
+                    className="qrcode"
+                  />
+
                   Website
+            </div>
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noreferrer">
+                <div style={{display:'flex',flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'20px'}}>
+                  <img
+                    src={qrCode}
+                    alt=""
+                    className="qrcode"
+                  />
+
+                <a href="https://instagram.com/stresslessglass" target="_blank" rel="noreferrer">
                   Instagram
                 </a>
+            </div>
               </div>
             </div>
             <button type="button" className="panel-close" onClick={closePanelsAndOverlay}>

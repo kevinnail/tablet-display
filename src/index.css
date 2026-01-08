@@ -123,6 +123,8 @@ html, body, #root {
   display: flex;
   gap: 14px;
   margin-top: 10px;
+  justify-content: center;
+  align-items: center;
 }
 
 .panel-links a {
@@ -154,4 +156,9 @@ html, body, #root {
 .screen-off-hint {
   color: rgba(255, 255, 255, 0.35);
   font-size: 16px;
+}
+
+.qrcode{
+width: 100px;
+
 }
