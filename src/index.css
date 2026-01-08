@@ -12,26 +12,51 @@ html, body, #root {
   height: 100%;
   position: relative;
 }
-
 .slideshow {
   width: 100%;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.slideshow-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.slideshow-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(24px) brightness(0.55);
+  transform: scale(1.08);
 }
 
-.slideshow-empty {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 18px;
+.slideshow-foreground-layer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
+
+.slideshow-image-contain {
+  width: min(92vw, 92vh);
+  height: min(92vw, 92vh);
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.6);
+  display: block;
+}
+
+.slideshow-image-fade-start {
+  opacity: 0;
+}
+
+.slideshow-image-fade-in {
+  opacity: 1;
+  transition: opacity 900ms ease;
+}
+
+.slideshow-image-fade-out {
+  opacity: 0;
+  transition: opacity 900ms ease;
+}
+
 
 .footer-text {
   position: absolute;

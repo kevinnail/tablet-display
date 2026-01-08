@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import Slideshow from './components/Slideshow/Slideshow.jsx';
-import Overlay from './components/Overlay/Overlay..jsx';
+import Overlay from './components/Overlay/Overlay.jsx';
 
-import glass01 from './assets/images/glass-01.jpg';
-import glass02 from './assets/images/glass-02.jpg';
-import glass03 from './assets/images/glass-03.jpg';
+import { loadImagesFromFolder } from './utils/loadImages';
+
 
 export default function App() {
-  const imageUrls = useMemo(() => [glass01, glass02, glass03], []);
+const imageUrls = useMemo(() => loadImagesFromFolder(), []);
+
 
   const [overlayVisible, setOverlayVisible] = useState(false);
   const [screenOff, setScreenOff] = useState(false);
