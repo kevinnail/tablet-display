@@ -1,68 +1,132 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+html, body, #root {
+  width: 100%;
+  height: 100%;
   margin: 0;
-  display: flex;
+  background: black;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.app-root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slideshow {
+  width: 100%;
+  height: 100%;
+}
+
+.slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slideshow-empty {
+  width: 100%;
+  height: 100%;
+  display: grid;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.footer-text {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  pointer-events: none;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 56px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 16px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.overlay-button {
+  background: rgba(0, 0, 0, 0.65);
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.panel {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 20px;
+}
+
+.panel-card {
+  width: min(760px, 92vw);
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 18px 18px 14px;
+}
+
+.panel-title {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.panel-body {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.panel-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.panel-links a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.panel-close {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.screen-off {
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: grid;
+  place-items: center;
+}
+
+.screen-off-hint {
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 16px;
 }
