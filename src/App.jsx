@@ -10,10 +10,9 @@ import slgLogo from './assets/logo-sq-1.png'
 export default function App() {
 const imageUrls = useMemo(() => loadImagesFromFolder(), []);
 
-
   const [overlayVisible, setOverlayVisible] = useState(false);
   const [screenOff, setScreenOff] = useState(false);
-  const [panel, setPanel] = useState('none'); // 'none' | 'about' | 'links'
+  const [panel, setPanel] = useState('none'); 
 
   useEffect(() => {
     if (!overlayVisible) return;
@@ -86,7 +85,7 @@ const imageUrls = useMemo(() => loadImagesFromFolder(), []);
             <div className="panel-body">
               <div className="panel-links">
 
-                 <a href="https://stresslessglass.kevinnail.com" target="_blank" rel="noreferrer">
+                 <a href="https://stresslessglass.kevinnail.com">
                  <div style={{display:'flex',flexDirection:'column', justifyContent:'center', alignItems:'center', gap:'20px'}}>
                   <img
                     src={slgLogo}
