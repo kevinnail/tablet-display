@@ -1,5 +1,5 @@
 export function loadImagesFromFolder() {
-  const imageModules = import.meta.glob('../assets/images/*.{png,jpg,jpeg,webp,avif}', {
+  const imageModules = import.meta.glob('../assets/images/*.{png,jpg,jpeg,JPEG,webp,avif}', {
     eager: true,
   });
 
