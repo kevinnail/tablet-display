@@ -41,7 +41,8 @@ export default function Slideshow({ imageUrls, slideIntervalMs, onInteract }) {
 
   // For crossfade
   const [previousImageUrl, setPreviousImageUrl] = useState(null);
-  const [currentImageUrl, setCurrentImageUrl] = useState(null);
+  const initialImageUrl = imageUrls[0];
+  const [currentImageUrl, setCurrentImageUrl] = useState(initialImageUrl);
   const [isFadingIn, setIsFadingIn] = useState(true);
 
   // For per-slide placement
@@ -69,16 +70,6 @@ export default function Slideshow({ imageUrls, slideIntervalMs, onInteract }) {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  useEffect(() => {
-    if (!Array.isArray(imageUrls) || imageUrls.length === 0) return;
-
-    // Initialize image URLs on first render
-    const initialImageUrl = imageUrls[0];
-    setPreviousImageUrl(null);
-    setCurrentImageUrl(initialImageUrl);
-    setIsFadingIn(true);
-  }, [imageUrls]);
 
   useEffect(() => {
     if (!Array.isArray(imageUrls) || imageUrls.length === 0) return;
